@@ -1,8 +1,24 @@
-import re
-email_condition = "^[a-z]+[\._]?[a-z 0-9]+[@]\w+[.]\w{2,3}$"
-user_email = input("Enter your email: ")
-if re.search(email_condition , user_email):
-    print("The above email is correct.")
-else:
-    print("The above email is wrong.")  
-      
+def valid_password(password):
+    if(len(password)<8):
+        return False
+    has_lower = False
+    has_upper = False
+    has_digit = False
+    has_symbol = False
+    symbols = "!\"#$%&'()*+,-,/:;<=>?@[\]^_`{|}~"
+    for character in password:
+        if character.islower():
+            has_lower = True
+        if character.isupper():
+            has_upper = True
+        if character.isdigit():
+            has_digit = True
+        if character in symbols:
+            has_symbol = True  
+    return has_lower and has_upper and \
+           has_digit and has_symbol
+print(valid_password("TryMeAgain864"))
+                     
+
+        
+

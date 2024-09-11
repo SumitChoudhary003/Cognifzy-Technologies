@@ -1,16 +1,13 @@
-num1 = float(input("Enter a first number: "))
-num2 = float(input("Enter a second number:  "))
-print("Press 1 for addition\nPress 2 for subtraction\nPress 3 for multiply\nPress 4 for division\npress 5 for modulo")
-choice = int(input("Enter choices between 1 to 5:"))
-if choice == 1:
-    print("Addition is: ",num1 + num2)
-elif choice == 2:
-    print("Subtraction is: ",num1 - num2)
-elif choice == 3:
-    print("Multiply is: ",num1 * num2)
-elif choice == 4:
-    print("Division is: ",num1 / num2) 
-elif choice == 5:
-    print("Modulus is: ",num1 % num2)
+def fibo(i):
+    if i <=1:
+        return i
+    else:
+        return(fibo(i-1) + fibo(i-2))
+num = 20
+if num  <= 0:
+    print("Enter a number: ")
 else:
-    print("Invalid choice from user")           
+    print("Fibonacci Series: ",end = " ")
+for i in range(num):
+    print(fibo(i), end = " ")            
+    
